@@ -14,6 +14,16 @@ Select test framework:
 Finally project structure will be created 
 Next we need to apply the Spring Boot plugin and define the dependencies
 
+Step 3
+
+Applying the Spring Boot plugin and configuring the dependencies
+
+Step 4
+
+Creating a "Hello Gradle" sample application
+
+Step 6
+
 Building and running the Spring Boot application
 
 $ ./gradlew bootJar
