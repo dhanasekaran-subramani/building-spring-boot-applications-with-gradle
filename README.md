@@ -27,7 +27,7 @@ Step 6
 Building and running the Spring Boot application
 
 $ ./gradlew bootJar
-$ java -jar build/libs/gradle-spring-boot-project.jar
+$ java -jar build/libs/building-spring-boot-applications-with-gradle.jar
 $ ./gradlew bootRun
 
 Step 7
