@@ -9,9 +9,8 @@
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-
-    // Apply the application plugin to add support for building a CLI application.
-    id 'application'
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
 repositories {
@@ -22,21 +21,25 @@ repositories {
 
 dependencies {
     // This dependency is used by the application.
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.google.guava:guava:28.2-jre'
 
-    // Use JUnit Jupiter API for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+    components {
+        withModule('org.springframework:spring-beans') {
+            allVariants {
+                withDependencyConstraints {
+                    // Need to patch constraints because snakeyaml is an optional dependency
+                    it.findAll { it.name == 'snakeyaml' }.each { it.version { strictly '1.19' } }
+                }
+            }
+        }
+    }
+
+    bootJar {
+        mainClassName = 'ccom.dhana.tutorials.gradle.App'
+    }
 }
 
-application {
-    // Define the main class for the application.
-    mainClassName = 'com.dhana.tutorials.gradle.App'
-}
-
-test {
-    // Use junit platform for unit tests
-    useJUnitPlatform()
-}
