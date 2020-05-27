@@ -13,3 +13,9 @@ Select build script DSL:
 Select test framework:
 Finally project structure will be created 
 Next we need to apply the Spring Boot plugin and define the dependencies
+
+Building and running the Spring Boot application
+
+$ ./gradlew bootJar
+$ java -jar build/libs/gradle-spring-boot-project.jar
+$ ./gradlew bootRun
