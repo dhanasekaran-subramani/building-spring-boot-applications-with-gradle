@@ -29,3 +29,8 @@ Building and running the Spring Boot application
 $ ./gradlew bootJar
 $ java -jar build/libs/gradle-spring-boot-project.jar
 $ ./gradlew bootRun
+
+Step 7
+
+Access the rest endpoint usnig below URL
+http://localhost:8080/
