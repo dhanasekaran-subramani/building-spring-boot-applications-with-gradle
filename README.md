@@ -1,4 +1,4 @@
-# building-spring-boot-applications-with-gradle
+# Building Spring Boot 2 Applications with Gradle
 
 Initializing the Gradle project
 
